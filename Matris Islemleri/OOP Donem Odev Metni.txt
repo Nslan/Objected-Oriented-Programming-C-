@@ -1,0 +1,85 @@
+A Matrix template class . We must be able to do the following operations in main function with matrix class.
+- Tamsayı değerleri olan bir Matrix sınıfı olmalıdır.
+Ana fonksiyonda aşağıdaki işlemleri matris sınıfıyla yapabilmeliyiz.
+- Matrix<int> *m1 = new Matrix<int>(); → 10x10 matrix with zeros.
+- 0 değerli 10x10 matris.
+- Matrix<int> *m2 = new Matrix<int>(3,2,1); → 3x2 matrix with
+ones. - 1 değerli 3x2 matris.
+- Matrix<int> *m2 = new Matrix<int>(3,4,9); → 3x4 matrix with 9’s.
+- 9 değerli 3x4 matris.
+- Matrix<int> *m3 = new Matrix<int>(5,5,'e'); → 5x5 identification
+matrix. - 5x5 birim matris
+- Matrix<int> *m4 = new Matrix<int>(15,15,'r'); → 15x15 matrix
+with random integers between [0-255] - değerleri 0-255 arasında
+rastgele değerler olan 15x15 matris.
+- m2->resize(5,5); → matrix resize operations after creation - matris
+oluşturulduktan sonra boyutu değiştirilmelidir.
+- m3->print(); → print matrix on the screen - matrisin ekrana
+yazdırılması.
+- m3->print(“file.txt”); → write to file - matrisin dosyaya
+yazdırılması.
+- matrix - matrix operations → matris -matris işlemleri
+- (*m1) = (*m1) + (*m2); // m1, m2, pointer ise
+- m1 = m1 - m2; // m1, m2, nesne ise
+- m1 = m1 * m2;
+- matrix - scalar operations → matris - skalar işlemleri
+- m1 = m1 + 12;
+- m1 = m1 - 20;
+- m1 = m1 * 10;
+- m1 = m1 / 10;
+- m1 = m1 % 10;
+- m1 = m1^2; // power, üs alma
+- matrix operations - matris işlemleri, sonuç yeni bir matris nesnesi
+olarak geri döndürülecek
+- m1->T(); → transpoze
+- m1->emul(m2); → elementwise multiply - eleman
+düzeyinde çarpma,
+- m1->inv() → matrix inversion if available - matrisin tersi
+- m1->det() → determinant of matrix - matrisin determinantı
+
+
+A Table class derived from Matrix class. - Matrix sınıfından türetilmiş bir
+Table sınıfı.
+- this class must contain special row names and col names. - bu sınıf
+özel satır isimleri ve sütun isimleri içermelidir.
+- default row names must be as ‘0’, ‘1’, ‘2,’ … etc. - varsayılan satır
+isimleri ‘0’, ‘1’, ‘2,’ … şeklinde olmalıdır.
+- default col names must be as ‘A’, ‘B’, ‘C’, … etc. - varsayılan sütun
+isimleri ‘A’, ‘B’, ‘C’, … (en fazla ‘Z’) şeklinde olmalıdır.
+- This class must contain the following methods to perform desired
+operations: - Bu sınıf, istenen işlemleri gerçekleştirmek için
+aşağıdaki methodları içermelidir:
+- Table<int>() → default constructor, a 10x10 table with
+zeros. - varsayılan yapıcı, sıfırlara sahip 10x10'luk bir
+tablo
+- Table<int>(int r,int c,int d) → rxc table with the value of d.
+- d değerine sahip rxc boyutlu bir tablo.
+- Table<int>(int r,int c,char ch) → rxc table. if the ch is ‘r’,
+then the value of the table must be random between 0 and
+255. - ch değeri ‘r’ ise 0-255 arasında rastgele değerlere
+sahip tablo
+- itemAt(int r,int c) → return the value at [r,c] index - [r,c]
+indisindeki değeri geri döndür
+- itemAt(string s) → return the value at the location specified
+by s. if s is “A2”, then the returning value must be the value
+at [2,0] index. sample code: itemAt("A2") - belirtilen
+hücredeki değeri geri döndür. eğer s==”A2” ise [2,0]
+indisindeki değeri geri döndür demektir. örnek kod:
+itemAt("A2")
+- itemAt(string rs,string cs) → sample code - örnek kod:
+itemAt("1","A")
+- setRowNames(string s[],int n) → set row names with given
+the string s. n is the length of s. sample code: verilen s
+stringi ve n sayısına göre satır isimlerini günceller.
+- string s[] = {"0. satır","1.
+satır","2. satır"};
+- tb->setRowNames(s,3);
+- cout << tb->itemAt("1. satır","B");
+- setColNames(string s[],int n) → set col names with given
+the string s. n is the length of s. - satır isimlerinin
+güncellenmesine benzer şekilde sütun isimlerini günceller.
+- print() → print the table values with row and col names,
+row names could be 8 characters at most and col names
+could be 4 characters at most. - Tablo değerlerini satır ve
+sütun adlarıyla yazdırır; satır adları en fazla 8 karakter,
+sütun adları en fazla 4 karakter olabilir.
