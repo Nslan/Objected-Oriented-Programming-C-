@@ -38,42 +38,36 @@ düzeyinde çarpma,
 - m1->det() → determinant of matrix - matrisin determinantı
 
 
-A Table class derived from Matrix class. - Matrix sınıfından türetilmiş bir
-Table sınıfı.
-- this class must contain special row names and col names. - bu sınıf
-özel satır isimleri ve sütun isimleri içermelidir.
-- default row names must be as ‘0’, ‘1’, ‘2,’ … etc. - varsayılan satır
-isimleri ‘0’, ‘1’, ‘2,’ … şeklinde olmalıdır.
-- default col names must be as ‘A’, ‘B’, ‘C’, … etc. - varsayılan sütun
-isimleri ‘A’, ‘B’, ‘C’, … (en fazla ‘Z’) şeklinde olmalıdır.
+A Table class derived from Matrix class.
+- this class must contain special row names and col names.
+- default row names must be as ‘0’, ‘1’, ‘2,’ … etc.
+- default col names must be as ‘A’, ‘B’, ‘C’, … etc. 
 - This class must contain the following methods to perform desired
-operations: - Bu sınıf, istenen işlemleri gerçekleştirmek için
-aşağıdaki methodları içermelidir:
-- Table<int>() → default constructor, a 10x10 table with
-zeros. - varsayılan yapıcı, sıfırlara sahip 10x10'luk bir
-tablo
+operations:
+- Table<int>() → default constructor, a 10x10 table with zeros.
 - Table<int>(int r,int c,int d) → rxc table with the value of d.
-- d değerine sahip rxc boyutlu bir tablo.
-- Table<int>(int r,int c,char ch) → rxc table. if the ch is ‘r’,
-then the value of the table must be random between 0 and
-255. - ch değeri ‘r’ ise 0-255 arasında rastgele değerlere
-sahip tablo
-- itemAt(int r,int c) → return the value at [r,c] index - [r,c]
-indisindeki değeri geri döndür
-- itemAt(string s) → return the value at the location specified
-by s. if s is “A2”, then the returning value must be the value
-at [2,0] index. sample code: itemAt("A2") - belirtilen
-hücredeki değeri geri döndür. eğer s==”A2” ise [2,0]
-indisindeki değeri geri döndür demektir. örnek kod:
-itemAt("A2")
-- itemAt(string rs,string cs) → sample code - örnek kod:
-itemAt("1","A")
-- setRowNames(string s[],int n) → set row names with given
-the string s. n is the length of s. sample code: verilen s
-stringi ve n sayısına göre satır isimlerini günceller.
-- string s[] = {"0. satır","1.
-satır","2. satır"};
-- tb->setRowNames(s,3);
+- Table<int>(int r,int c,char ch) → rxc table. if the ch is ‘r’,then the value of the table must be random between 0 and 255.
+- itemAt(int r,int c) → return the value at [r,c] index 
+- itemAt(string s) → return the value at the location specified by s. sample code: itemAt("A2") if s is “A2”, then the returning value must be the value at [2,0] index.
+- itemAt(string rs,string cs) → return the value at the location . sample code : itemAt("1","A") then the returning value must be the value at [1,0] index.
+- setRowNames(string s[],int n) → set row names with given the string s. n is the length of s. sample code: - string s[] = {"0. row","1. row "..."n. row"};
+
+Matrix sınıfından türetilmiş bir Table sınıfı.
+- bu sınıf özel satır isimleri ve sütun isimleri içermelidir.
+- varsayılan satır isimleri ‘0’, ‘1’, ‘2,’ … şeklinde olmalıdır.
+- varsayılan sütun isimleri ‘A’, ‘B’, ‘C’, … (en fazla ‘Z’) şeklinde olmalıdır.
+- Bu sınıf, istenen işlemleri gerçekleştirmek içinaşağıdaki methodları içermelidir:
+- Table<int>() → varsayılan yapıcı, sıfırlara sahip 10x10'luk bir tablo
+- Table<int>(int r,int c,int d) →  d değerine sahip rxc boyutlu bir tablo.
+- Table<int>(int r,int c,char ch) → rxc Tablo. ch değeri ‘r’ ise 0-255 arasında rastgele değerlere sahip tablo
+- itemAt(int r,int c) →  [r,c] index indisindeki değeri geri döndür 
+- itemAt(string s) →  belirtilen hücredeki değeri geri döndür. örnek kod: itemAt("A2") eğer s==”A2” ise [2,0] indisindeki değeri geri döndür demektir. 
+- itemAt(string rs,string cs) →  belirtilen satır sutundaki degeri geri döndür. örnek kod: itemAt("1","A") ise [1,0] indisindeki degeri geri döndür demektir.
+- setRowNames(string s[],int n) →  verilen s stringi ve n sayısına göre satır isimlerini günceller: string s[] = {"0. satır","1. satır"...."n. satır"};
+
+
+- tb->setRowNames(s,3); set row names with given
+the string s. n is the length of s
 - cout << tb->itemAt("1. satır","B");
 - setColNames(string s[],int n) → set col names with given
 the string s. n is the length of s. - satır isimlerinin
